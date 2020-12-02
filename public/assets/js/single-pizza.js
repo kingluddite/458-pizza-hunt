@@ -21,7 +21,7 @@ function printPizza(pizzaData) {
   $createdAt.textContent = createdAt;
   $size.textContent = size;
   $toppingsList.innerHTML = toppings
-    .map(topping => `<span class="col-auto m-2 text-center btn">${topping}</span>`)
+    .map((topping) => `<span class="col-auto m-2 text-center btn">${topping}</span>`)
     .join('');
 
   if (comments && comments.length) {
@@ -42,9 +42,7 @@ function printComment(comment) {
       <div class="bg-dark ml-3 p-2 rounded" >
         ${
           comment.replies && comment.replies.length
-            ? `<h5>${comment.replies.length} ${
-                comment.replies.length === 1 ? 'Reply' : 'Replies'
-              }</h5>
+            ? `<h5>${comment.replies.length} ${comment.replies.length === 1 ? 'Reply' : 'Replies'}</h5>
         ${comment.replies.map(printReply).join('')}`
             : '<h5 class="p-1">No replies yet!</h5>'
         }
@@ -108,7 +106,7 @@ function handleNewReplySubmit(event) {
   const formData = { writtenBy, replyBody };
 }
 
-$backBtn.addEventListener('click', function() {
+$backBtn.addEventListener('click', function () {
   window.history.back();
 });
 
